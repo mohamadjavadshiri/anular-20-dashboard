@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+@use "./app/core/theme/base.scss";
+@import "./app/core/theme/bootstrap-grid.scss";
+@import "primeicons/primeicons.css";
+.overlay-side-panel {
+  width: 222px !important;
+  height: 100%;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  margin-left: -4px;
+  margin-top: -1px;
+}
+.p-drawer {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.grid-search-icon {
+  position: absolute;
+  top: 9px;
+  right: 7px;
+}
+.grid-search-input {
+  padding-right: 24px !important;
+}

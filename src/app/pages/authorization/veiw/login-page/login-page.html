@@ -1,0 +1,75 @@
+<div class="login-wrapper">
+
+  <div class="login-box">
+    <div class="logo">
+      <img src="assets/logo.png" alt="Logo" />
+    </div>
+
+    <h2 class="title">Sign in</h2>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+
+      <div class="input-group">
+        <i class="pi pi-envelope"></i>
+        <input
+          name="email"
+          type="email"
+          pInputText
+          formControlName="email"
+          placeholder="Email"
+          class="text-input"
+        />
+      </div>
+      <small
+        class="error"
+        [class.visible]="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
+      >
+        Please enter a valid email
+      </small>
+
+      <div class="input-group">
+        <i class="pi pi-lock"></i>
+        <input
+          name="password"
+          type="password"
+          pPassword
+          formControlName="password"
+          [feedback]="false"
+          placeholder="Password"
+          class="text-input"
+        />
+      </div>
+      <small
+        class="error"
+        [class.visible]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
+      >
+        Please enter your password
+      </small>
+
+      <div class="login-options">
+        <div class="remember">
+          <p-checkbox
+            binary="true"
+            formControlName="remember"
+            inputId="rememberMe"
+          ></p-checkbox>
+          <label for="rememberMe">Remember me</label>
+        </div>
+        <a routerLink="/auth/forgot-password" class="forgot">Forgot password?</a>
+      </div>
+
+      <button
+        pButton
+        type="submit"
+        label="Login"
+        class="login-btn"
+        [disabled]="loginForm.invalid || loading"
+      ></button>
+    </form>
+
+    <p class="helper">
+      Don't have an account?
+      <a routerLink="/auth/register">Register</a>
+    </p>
+  </div>
+</div>

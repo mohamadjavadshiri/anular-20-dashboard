@@ -1,0 +1,72 @@
+<div class="card m-12">
+  <p-table
+    #dt1
+    stripedRows 
+    [paginator]="true"
+    [rows]="5"
+    [tableStyle]="{ 'min-width': '50rem' }"
+    [rowsPerPageOptions]="[5, 10, 20]"
+    [value]="products"
+    [globalFilterFields]="['name']"
+     [showCurrentPageReport]="true"
+     currentPageReportTemplate="نمایش {first} تا {last} از {totalRecords} "
+  >
+    <ng-template #caption>
+      <div class="d-flex">
+        <div class="flex-1">
+
+        </div>
+        <div class="d-flex p-relative">
+          <div class="d-f-c-c grid-search-icon">
+            <i class="pi pi-search mt-4"></i>
+          </div>
+          <div>
+            <input
+              class="grid-search-input"
+              pInputText
+              type="text"
+              (input)="GlobalFilterGrid(dt1, $event.target)"
+              placeholder="جستجو"
+            />
+          </div>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template #header>
+      <tr>
+        <th pSortableColumn="code" style="width: 20%">
+          <div class="flex items-center gap-2">
+            کد
+            <p-sortIcon field="code" />
+          </div>
+        </th>
+        <th pSortableColumn="name" style="width: 20%">
+          <div class="flex items-center gap-2">
+            نام
+            <p-sortIcon field="name" />
+          </div>
+        </th>
+        <th pSortableColumn="category" style="width: 20%">
+          <div class="flex items-center gap-2">
+            نوع
+            <p-sortIcon field="category" />
+          </div>
+        </th>
+        <th pSortableColumn="quantity" style="width: 20%">
+          <div class="flex items-center gap-2">
+            تعداد
+            <p-sortIcon field="quantity" />
+          </div>
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template #body let-product>
+      <tr>
+        <td>{{ product.code }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.category }}</td>
+        <td>{{ product.quantity }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

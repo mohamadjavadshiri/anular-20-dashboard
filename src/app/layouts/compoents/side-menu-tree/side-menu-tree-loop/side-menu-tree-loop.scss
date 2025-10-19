@@ -1,0 +1,23 @@
+.nave-icon {
+  font-size: 16px;
+  margin-left: 4px;
+
+}
+
+.nave-item-row {
+  margin-top: 4px;
+  margin-bottom:4px;
+  padding: 4px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.nave-item-row:hover {
+  background-color: var(--p-slate-700);
+}
+.child-nave-items {
+  // background-color: var(--p-slate-900);
+  border-radius: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}

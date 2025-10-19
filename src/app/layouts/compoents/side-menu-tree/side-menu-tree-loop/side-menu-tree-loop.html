@@ -1,0 +1,36 @@
+<div class="nave-item-row">
+  <div class="d-flex">
+    <div class="flex-1">
+      <div class="d-flex d-f-y-c" (click)="onClickNaveITem(NaveTree)">
+        <div class="d-flex flex-1">
+          <div class="d-f-c-c">
+            <div  class="d-f-c-c">
+              <span class="nave-icon" [ngClass]="NaveTree.icon"></span>
+            </div>
+          </div>
+          <div class="nave-title Body-Small">{{ NaveTree.title }}</div>
+        </div>
+        <div>
+          @if (NaveTree.children.length>0) { @if ( !NaveTree.isShowChildren){
+          <div class="d-f-c-c">
+            <span class="nave-icon pi pi-angle-left"></span>
+          </div>
+          } @if (NaveTree.isShowChildren){
+          <div class="d-f-c-c">
+            <span class="nave-icon pi pi-angle-down"></span>
+          </div>
+          } }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+@if (NaveTree.children.length>0 && NaveTree.isShowChildren) {
+<div class="child-nave-items">
+  @for (item of NaveTree.children; track item.id) {
+  <div class="mr-16">
+    <app-side-menu-tree-loop [NaveTree]="item"></app-side-menu-tree-loop>
+  </div>
+  }
+</div>
+}

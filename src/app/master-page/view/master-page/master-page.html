@@ -1,0 +1,35 @@
+<div class="d-flex master-page" dir="rtl">
+  <div
+    class="h-100-p master-page-side-menu hide"
+    [class.show]="isShowSideMenu && !isMobile"
+  >
+    <app-side-menu> </app-side-menu>
+  </div>
+  <div class="flex-1 master-page-content d-flex-column">
+    <div>
+      <app-top-menu-nave-bar
+        (onToggleSideMenu)="onToggleSideMenu($event)"
+      ></app-top-menu-nave-bar>
+    </div>
+    ّ
+    <div class="flex-1 master-content">
+      <router-outlet />
+    </div>
+  </div>
+</div>
+
+@if(isMobile){
+<p-drawer
+  [(visible)]="isShowSideMenu"
+  position="right"
+  styleClass="overlay-side-panel"
+>
+  <ng-template #headless>
+    <div dir="rtl" class="h-100">
+      <app-side-menu> </app-side-menu>
+    </div>
+  </ng-template>
+</p-drawer>
+}
+
+<p-toast position="top-left" dir="rtl" />

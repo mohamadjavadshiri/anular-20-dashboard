@@ -1,0 +1,45 @@
+.side-menu-card {
+  height: 100%;
+  width: 220px;
+  background-color: var(--p-slate-800);
+  color: var(--text-color);
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  box-shadow: 0px 0px 5px gray;
+}
+
+.avatar-icon {
+  width: 90px;
+  height: 90px;
+  border: 2px solid gray;
+  border-radius: 50%;
+}
+
+.avatar-section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  // background-color: var(--p-slate-700);
+}
+
+.avatar-section-box {
+  // margin-top: 12px;
+}
+
+.logo-section-box {
+  height: 40px;
+  padding-right: 4px;
+  padding-top: 8px;
+  border-top-left-radius: 8px;
+  min-height: 50px;
+}
+
+.logo-image {
+  width: 70px;
+}
+
+.side-menu-top-section {
+
+}

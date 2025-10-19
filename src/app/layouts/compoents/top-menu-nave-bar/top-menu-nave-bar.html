@@ -1,0 +1,22 @@
+<div class="top-menu-nave-bar d-flex">
+  <div (click)="toggleSideMenu()" class="toggle-menu d-f-c-c mx-8">
+    <span class="pi pi-bars toggle-menu-icon"></span>
+  </div>
+  <div class="flex-1"></div>
+  <div class="user-setting-section d-f-c-c">
+    <div class="d-f-c-c user-setting-row" (click)="menu.toggle($event)">
+      <div>
+        <img class="mini-avatar-icon" src="/layout-imgs/user.png" />
+      </div>
+      <div>
+        <span>محمدجواد</span>
+        <span>شیری</span>
+      </div>
+    </div>
+  </div>
+
+  <p-menu #menu [model]="items"  [popup]="true"/>
+  <!-- <div>
+    <img class="log-image" src="logo-mci-light.svg" />
+  </div> -->
+</div>
